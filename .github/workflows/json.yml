@@ -30,51 +30,19 @@ jobs:
             - name: Download public_suffix_list.dat
               run: curl -o list/public_suffix_list.dat https://publicsuffix.org/list/public_suffix_list.dat
 
-            - name: Check if the old JSON file exists
-              run: |
-                  if [ -f list/public_suffix_list.json ]; then
-                      echo "Old file exists"
-                      echo "old_file_exists=true" >> $GITHUB_ENV
-                  else
-                      echo "Old file does not exist"
-                      echo "old_file_exists=false" >> $GITHUB_ENV
-                  fi
-
-            - name: Backup the old JSON file
-              if: ${{ env.old_file_exists == 'true' }}
-              run: cp list/public_suffix_list.json list/public_suffix_list.json.old
-
             - name: Convert public_suffix_list.dat to JSON
               run: node scripts/json.js
 
-            - name: Check if the file has changed
-              run: |
-                  if [ -f list/public_suffix_list.json.old ]; then
-                      git diff --exit-code list/public_suffix_list.json list/public_suffix_list.json.old
-                      if [ $? -eq 0 ]; then
-                          echo "No changes in the file"
-                          echo "changed=false" >> $GITHUB_ENV
-                      else
-                          echo "Changes detected in the file"
-                          echo "changed=true" >> $GITHUB_ENV
-                      fi
-                  else
-                      echo "Old file does not exist"
-                      echo "changed=true" >> $GITHUB_ENV
-                  fi
-
             - name: Commit
-              if: ${{ env.changed == 'true' }}
               env:
                   MINIFY_PERCENT: ${{ env.minify_percent }}
               run: |
                   git config --global user.name "GitHub Actions"
                   git config --global user.email "actions@github.com"
                   git add list/public_suffix_list.json
-                  git commit -m "chore: convert PSL to JSON"
+                  git commit --allow-empty -m "chore: convert PSL to JSON"
                   git push
 
             - name: Trigger Coolify Webhook
-              if: ${{ env.changed == 'true' }}
               run: |
                   curl -X POST "${{ secrets.WEBHOOK_URL }}" -H "Authorization: Bearer ${{ secrets.COOLIFY_API_KEY }}"
