@@ -1,6 +1,6 @@
 {
-    "VERSION": "2024-11-20_09-23-24_UTC",
-    "COMMIT": "ab15d334922d67b6063d0098b6b6ae49e3d34a0f",
+    "VERSION": "2024-11-22_14-03-03_UTC",
+    "COMMIT": "cb7517da54bfba1bc262c68e5151f6df52a90677",
     "ICANN": [
         "ac",
         "com.ac",
@@ -847,10 +847,10 @@
         "com.ge",
         "edu.ge",
         "gov.ge",
-        "org.ge",
-        "mil.ge",
         "net.ge",
+        "org.ge",
         "pvt.ge",
+        "school.ge",
         "gf",
         "gg",
         "co.gg",
