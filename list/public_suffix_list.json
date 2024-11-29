@@ -1,6 +1,6 @@
 {
-    "VERSION": "2024-11-27_21-57-17_UTC",
-    "COMMIT": "e1b1608547b24bb84034c1083060e3293e7907d0",
+    "VERSION": "2024-11-28_18-36-22_UTC",
+    "COMMIT": "03c6a36304d4de698aff16f6fa33b9371af58786",
     "ICANN": [
         "ac",
         "com.ac",
@@ -8972,7 +8972,6 @@
         "mcdir.ru",
         "vps.mcdir.ru",
         "mcpre.ru",
-        "mcpe.me",
         "mediatech.by",
         "mediatech.dev",
         "hra.health",
