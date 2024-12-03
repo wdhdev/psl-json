@@ -1,6 +1,6 @@
 {
-    "VERSION": "2024-11-29_07-27-09_UTC",
-    "COMMIT": "70df5fb64d3337f49a1cb5e2e9d3bf3aa7a20f0f",
+    "VERSION": "2024-12-02_11-32-34_UTC",
+    "COMMIT": "a12cce094e9c97b3ea7ce921faeea606fde7ef98",
     "ICANN": [
         "ac",
         "com.ac",
@@ -9042,6 +9042,7 @@
         "cust.retrosnub.co.uk",
         "ui.nabu.casa",
         "cloud.nospamproxy.com",
+        "o365.cloud.nospamproxy.com",
         "netfy.app",
         "netlify.app",
         "4u.com",
@@ -9698,7 +9699,6 @@
         "org.yt",
         "rs.ba",
         "bielsko.pl",
-        "upli.io",
         "urown.cloud",
         "dnsupdate.info",
         "us.org",
